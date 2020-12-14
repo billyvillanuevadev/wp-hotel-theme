@@ -1,0 +1,191 @@
+/*-----------------------------------------
+# Motopress: Booking Calendar Light
+-----------------------------------------*/
+.mphb_sc_search_results-wrapper {
+  a {
+    color: $black;
+  }
+}
+
+.mphb-reserve-btn,
+.mphb-button,
+.mphb_sc_search-submit-button-wrapper input[type=submit],
+.mphb_sc_checkout-submit-wrapper input[type=submit] {
+  @include btn-background($black);
+  min-width: 150px;
+}
+
+.mphb-price, .mphb-recommendation-total, .mphb-recommendation-item-count, 
+.mphb-recommendation-item-link, .mphb-customer-details-title, .mphb-price-breakdown-title {
+  font-weight: 700;
+}
+
+.mphb_sc_search_results-wrapper .mphb-reservation-cart,
+.mphb-check-in-date {
+  margin-bottom: 0;
+}
+
+.mphb_sc_search_results-info {
+  position: relative;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid transparent;
+  font-weight: 700;
+
+  color: #0c5460;
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+}
+
+.mphb-recommendation-title,
+.mphb-empty-cart-message,
+.mphb-room-number {
+  font-size: 1.2em;
+  font-family: 'Open Sans';
+  font-weight: 700;
+}
+
+#mphb-recommendation,
+.mphb_sc_search_results-wrapper .mphb-room-type,
+.mphb-room-details {
+  padding: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 2rem;
+  border: 1px solid $gray;
+  border-left-width: .25rem;
+  border-left-color: $black;
+  position: relative;
+}
+
+.mphb_sc_search_results-wrapper .mphb-room-type {
+  padding: 1.5rem;
+
+  &, &:not(:first-of-type) {
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+
+  .post-thumbnail{
+    max-width: 500px;
+  }
+
+  .mphb-room-type-title {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: $black;
+  }
+
+  .mphb-view-details-button {
+    color: $blue;
+  }
+  
+  .mphb-price-period {
+    cursor: auto;
+  }
+
+  .mphb-room-type-details-title,
+  .mphb-loop-room-type-attributes {
+    display: none;
+  }
+}
+
+.mphb-room-type-facilities {
+  display: none !important;
+}
+
+.mphb_sc_search_results-wrapper .mphb-room-type .mphb-room-type-details-title,
+.mphb_room_type .mphb-details-title  {
+  font-family: 'Open Sans';
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.mphb_room_type {
+  .mphb-calendar-title, .mphb-calendar {
+    display: none !important;
+  }
+
+  .mphb-reservation-form-title {
+    border-top: 1px solid lightgray;
+    margin-top: 30px;
+    padding-top: 30px;
+    font-size: 1.5em;
+    font-weight: 700;
+  }
+
+  abbr {
+    color: $red;
+  }
+}
+
+.mphb-regular-price,
+.mphb-total-price {
+  font-size: 1.2em;
+  .mphb-price {
+    color: $red;
+  }
+}
+
+.mphb-price-breakdown-total .mphb-price {
+  color: $red;
+}
+
+.mphb-price-breakdown-rate {
+  padding-top: 15px;
+}
+
+.mphb-room-details,
+.mphb-checkout-section.mphb-customer-details {
+  max-width: 500px;
+}
+
+.mphb-booking-form, .mphb_sc_checkout-form, .mphb_sc_search-form {
+  input[type=text],
+  input[type=email],
+  textarea,
+  select {
+    border: 1px solid #ddd;
+    border-radius: 0;
+    color: $black;
+    line-height: 1.4em;
+    padding: 20px;
+    width: 100%;
+    font-size: 14px;
+    background: #fff;
+
+    height: 42px;
+    padding: 8px 20px;
+  }
+}
+
+.mphb-price-breakdown {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 15px;
+  background-color: $white;
+
+  th,
+  td {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid $gray-dark;
+  }
+
+  thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid $gray-dark;
+  }
+
+  tbody + tbody {
+    border-top: 2px solid $gray-dark;
+  }
+
+  
+}
+
+.mphb-room-type-title,
+.mphb-price-breakdown {
+  a {
+    color: $blue;
+  }
+}

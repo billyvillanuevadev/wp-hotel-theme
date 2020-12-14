@@ -1,0 +1,11 @@
+/*-----------------------------------------
+# Common
+-----------------------------------------*/
+
+body {
+  position: relative;
+
+  &.modal-open {
+    padding-right: 0px !important;
+  }
+} 

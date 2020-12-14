@@ -1,0 +1,21 @@
+/*-----------------------------------------
+# Buttons
+-----------------------------------------*/
+.btn-default {
+  @include btn-background($black);
+}
+
+.btn-outline-white {
+  @include btn-outline($white, $black);
+}
+
+.btn-no-style {
+  background: transparent;
+  color: $white;
+  padding: 0;
+
+  &, &:focus, &:active, &:hover {
+    border: none;
+    outline: none;
+  }
+}

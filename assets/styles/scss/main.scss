@@ -1,0 +1,24 @@
+// @import '../../../node_modules/bootstrap/scss/bootstrap.scss'; 
+// using CDN for bootstrap
+
+@import './01-config/variables';
+@import './01-config/mixins'; 
+@import './01-config/functions';
+
+@import './02-base/common';
+@import './02-base/typography';
+@import './02-base/forms'; 
+
+@import './03-utilities/colors';
+@import './03-utilities/utils';
+
+@import './04-objects/buttons';
+
+@import './05-globals/header';
+@import './05-globals/footer';
+@import './05-globals/layout';
+
+@import './06-components/sections';
+@import './06-components/modals';
+@import './06-components/sliders';
+@import './06-components/motopress';

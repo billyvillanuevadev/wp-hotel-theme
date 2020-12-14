@@ -1,0 +1,180 @@
+/*-----------------------------------------
+# Slick Carousel
+-----------------------------------------*/
+.slick-leaf {
+  position: relative;
+  overflow: hidden;
+  padding-right: 50px; 
+  width: 100%;
+
+  @media (min-width: $grid-breakpoint-lg){
+    
+  }
+
+  .slick {
+    opacity: 0;
+    @include transition(all .5s ease .5s);
+
+    &.slick-initialized{
+      opacity: 1;
+    }
+  }
+
+  .slick-list {
+    overflow: visible;
+  }
+
+  .slick-slide {
+    position: relative;
+    height: 70vh;
+    opacity:  0!important;
+    @include transform-origin(left);
+    @include transition(all .5s ease!important);
+    @include transform(translateX(13%) scale(.95));
+
+    @media (min-width: $grid-breakpoint-lg) {
+      @include transform(translateX(10%) scale(.95));
+    }
+
+    &.slick-current{
+      @include transform(translateX(0) scale(1));
+      opacity: 1!important;
+      z-index: 1;
+
+      & + .slick-slide {
+        opacity: 0.6!important;
+        @include transform(translateX(13%) scale(.95));
+
+        @media (min-width: $grid-breakpoint-lg){
+          @include transform(translateX(10%) scale(.95));
+        }
+      }
+    }
+
+    &.slide-prev {
+      opacity: 1!important;
+      @include transform(translateX(0) scaleX(0));
+    }
+
+    .img-link {
+      display: block;
+      height: 100%;
+      outline: none;
+
+      &, &:focus, &:hover{
+        background-size: cover;
+      }
+    }
+  }
+
+  .slick-nav-wrapper {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+
+    img {
+      height: 26px;
+      width: 16px;
+      -webkit-filter: drop-shadow(0 0 12px hsla(0,0%,7%,.5));
+      filter: drop-shadow(0 0 12px rgba(17,17,17,.5));
+    }
+
+    .next, .prev{
+      position: absolute;
+      z-index: 1;
+      cursor: pointer;
+      top: 0;
+    }
+
+    .prev {
+      left: 3rem;
+      @include transform(translateY(-50%) rotate(180deg));
+
+      img {
+        margin-right: 105px;
+      }
+    }
+
+    .next {
+      right: 3rem;
+      @include transform(translateY(-50%));
+    }
+  }
+}
+
+.slick-leaf-desc,
+.slick-gallery {
+  &:focus, &:active, &:hover,
+  .slick-track:focus, .slick-slide:focus {
+    border: 0;
+    outline: none;
+  }
+}
+
+.slick-leaf-desc {
+
+  .slick-list {
+    padding-bottom: 30px;
+  }
+
+  .slick-dots {
+    padding: 0 30px;
+
+    li {
+      width: 25%;
+      margin: 0;
+      height: auto;
+
+      &.slick-active {
+        border-bottom: 1px solid $black;
+      }
+
+      button {
+        font-size: 1em;
+        line-height: 1em; 
+        color: $black;
+        text-align: center;
+        display: inline-block;
+        height: auto;
+
+        &:before {
+          content: none;
+        }
+      }
+    }
+
+    &:after {
+      border-bottom: 1px solid black;
+      content: ' ';
+      width: 100%;
+      display: block;
+      height: 1px;
+    }
+  }
+
+  .slick-next, .slick-prev {
+    z-index: 1;
+    font-weight: 900;
+    top: auto;
+    bottom: -31px;
+    @include transform(none);
+
+    &:before {
+      color: $black;
+    }
+  }
+
+  .slick-prev {
+    left: 0; 
+    &:before {
+      content: "<";
+    }
+  }
+
+  .slick-next {
+    right: 0;
+    &:before {
+      content: ">";
+    }
+  }
+}

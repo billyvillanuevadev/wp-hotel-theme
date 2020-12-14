@@ -1,0 +1,261 @@
+/*-----------------------------------------
+# Header: Logo
+-----------------------------------------*/
+.logo-simple {
+  color: $white;
+  position: relative;
+  display: inline-block;
+
+  .logo {
+    color: $white;
+    font-size: 28px;
+    letter-spacing: 10px;
+    line-height: 1em;
+
+    &:hover, &:focus, &:active {
+      text-decoration: none;
+      color: $white;
+    }
+  }
+
+  .subtitle {
+    margin: 0;
+    font-size: 10px;
+    text-transform: uppercase;
+    line-height: 1em;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    display: block;
+    text-align: center;
+    position: relative;
+    left: -8px;
+  }
+}
+
+/*-----------------------------------------
+# Header: Sticky Header
+-----------------------------------------*/
+.xbv-sticky-header {
+  z-index: 998;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  @include transition(all .4s ease);
+
+  .xbv-sticky-header-inner {
+    z-index: 999;
+    position: relative;
+    width: 100%;
+    background: transparent;
+    padding: 20px 0;
+    @include transform(translateZ(0));
+    @include transition(all .3s ease);
+  }
+
+  &.sticky {
+    position: fixed;
+    @include transition(all .4s ease);
+    
+    .xbv-sticky-header-inner {
+      top: 0;
+      left: 0;
+      padding: 0;
+      @extend .xbv-opaque;
+      @include box-shadow(0 1px 15px rgba(0,0,0,.15));
+      @include transition(all .3s ease);
+    }
+  }
+}
+
+/*-----------------------------------------
+# Header: Hero Image
+-----------------------------------------*/
+.xbv-image-banner-header {
+  position: relative;
+  background-color: $black;
+  width: 100%;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 150px;
+
+  .page-title {
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    display: block; 
+    width: 100%;
+  }
+
+  @media (min-width: $grid-breakpoint-lg) {
+    height: 250px;
+
+    .page-title {
+      bottom: 30px;
+    }
+  }
+}
+
+/*-----------------------------------------
+# Header: Masthead Image Carousel
+-----------------------------------------*/
+#xbv-masthead-carousel { 
+  position: relative;
+
+  .carousel-item {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    @include background-size(cover);
+
+    .carousel-caption {
+      bottom: 120px;
+    }
+  }
+
+  .fas {
+    font-size: 2em;
+  }
+
+  .carousel-indicators {
+    bottom: 15px;
+  }
+
+  .masthead-booking {
+    position: absolute;
+    right: 0;
+    bottom: 90px;
+    left: 0;
+    z-index: 16;
+    padding-left: 0;
+    margin-right: 15%;
+    margin-left: 15%;
+    text-align: center;
+
+    .masthead-booking-form {
+      display: inline-block;
+      padding: 10px 10px 10px 15px;
+
+      input[type="text"], a {
+        width: 72px;
+        margin: 0 7px;
+        height: 24px;
+        font-size: 0.9em;
+        text-align: center;
+      }
+    }
+
+    button, a {
+      // min-width: 80px;
+
+      img {
+        width: 20px;
+        @include transition(all .25s ease);
+        margin-left: 8px;
+        margin-top: -3px;
+      }
+
+      &:hover {
+        color: white;
+        text-decoration: none;
+
+        img {
+          margin-left: 12px;
+        }
+      }
+    }
+  }
+}
+
+/*-----------------------------------------
+# Header: Navigation
+-----------------------------------------*/
+#global-header {
+  .navbar {
+    position: relative;
+
+    .nav-item {
+      padding-left: 10px;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 3px;
+    }
+
+    &.navbar-dark .navbar-nav {
+      .nav-link {
+        color: $white !important;
+        font-weight: 600;
+        
+        &.active,
+        &:hover {
+          color: rgba($white, .6) !important;
+        }
+      }
+    }
+
+    .navbar-collapse {
+      @extend .xbv-opaque;
+
+      @media (min-width: $grid-breakpoint-lg) {
+        background-color: transparent;
+        @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+          -webkit-backdrop-filter: none;
+          backdrop-filter: none;
+        }
+      }
+    }
+  }
+
+  &.sticky {
+    .navbar .navbar-collapse {
+      background-color: transparent;
+      @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+      }
+    }
+  }
+
+  .icons-absolute {
+    position: absolute;
+    right: 15px;
+    top: 18px;
+    font-size: 20px;
+
+    .navbar-toggler {
+      padding: 0;
+      color: rgba($white,.5);
+
+      &.collapsed {
+        color: $white;
+      }
+    }
+
+    .cart-toggler {
+      line-height: 1em;
+      font-size: 16px;
+      height: auto;
+      min-height: auto;
+      margin-left: 15px;
+      top: -2px;
+      position: relative;
+
+      color: rgba($white,.5);
+      &:hover {
+        color: $white;
+      }
+    }
+
+    .navbar-toggler,
+    .cart-toggler {
+      border: none;
+
+      &:focus, &:active, &:hover {
+        border: none;
+        outline: none;
+      }
+    }
+  }
+}
